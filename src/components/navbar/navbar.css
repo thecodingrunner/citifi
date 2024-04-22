@@ -1,9 +1,14 @@
 .nav {
+    width: 100vw;
+    position: fixed;
     display: flex;
+    top: 0px;
+    left: 0px;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
     background-color: transparent;
+    z-index: 999;
 }
 
 .logo {
@@ -19,4 +24,72 @@ ul {
 .link {
     text-decoration: none;
     font-size: 1.2rem;
+    color: inherit;
+}
+
+.link:hover {
+    color: var(--text-gray);
+}
+
+.active {
+    color: var(--text-yellow);
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger-menu .link {
+    font-size: 1.5rem;
+}
+
+.hamburger-menu li {
+    padding: 50px 0px;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.hamburger {
+    display: none;
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    list-style: none;
+    background-color: white;
+}
+
+/* SMALL DEVICES */
+
+@media screen and (max-width: 700px) {
+    .main-menu {
+        display: none;
+    }
+
+    .nav {
+        justify-content: center;
+        background-color: white;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 5px;
+        font-size: 3rem;
+    }
 }
